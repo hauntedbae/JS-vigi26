@@ -57,6 +57,8 @@ const key = 6;
 // ? if
 // : else
 
+
+// naudoti template string tik tada, kai dedame kintamuosius i vidu.
 const name = 'Rima';
 const surname = 'Sakalauskaite'
 
