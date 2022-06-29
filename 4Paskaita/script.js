@@ -12,11 +12,10 @@
 
 // kintamieji turi būti i, j, k
 // sukuriamas kintamasis
-// [inicializavimas];[sąlyga];[galutinė išraiška] 
+// [inicializavimas];[sąlyga];[galutinė išraiška]
 // for (let i = 0; i < 10; i++) {
 //     console.log('John');
 // }
-
 
 //   const name = 'John';
 //   const count = 10;
@@ -29,7 +28,6 @@
 //   for (let i = 0; i < count; i++) {
 //     console.log(`${i}. ${name}`);
 //   }
-
 
 // abu tinka 4 ats.
 //  i = 10; 10 > 0; 10  true
@@ -45,7 +43,6 @@
 // for (let i = 10; i > 0; i-- ) {
 //     console.log(i);
 // }
-
 
 // i = 0; 0 < 10; i = 0 + 2
 // i = 2; 2 < 10; i = 2 + 2
@@ -101,8 +98,8 @@
 //     i++;
 // }
 
-// do...while ciklas pirmiausia įvykdys kūną, 
-// tada patikrins būklę ir, kol tai tiesa, 
+// do...while ciklas pirmiausia įvykdys kūną,
+// tada patikrins būklę ir, kol tai tiesa,
 // vėl ir vėl ją vykdys.
 
 // let i = 0;
@@ -132,11 +129,11 @@ const repeat = 4;
 let result = "";
 
 for (let i = 0; i < repeat; i++) {
-    if (i === repeat -1) {
-         result += `${getLaugh}. `;
-    } else {
-        result += `${getLaugh}, `;
-    }
+  if (i === repeat - 1) {
+    result += `${getLaugh}. `;
+  } else {
+    result += `${getLaugh}, `;
+  }
 }
 
 console.log(result);

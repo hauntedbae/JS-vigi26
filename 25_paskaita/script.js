@@ -1,15 +1,20 @@
 const renderTodo = (todo) => {
-  const { completed, title } = todo;
+  const { id, completed, title } = todo;
 
   const todoEl = document.createElement("div");
   const todoTitle = document.createElement("p");
+  const todoActions = document.createElement("div");
   const todoStatus = document.createElement("span");
+  const deleteButton = document.createElement("button");
 
   todoEl.className = "todo";
   todoTitle.className = completed ? "todo-title done" : "todo-title";
   todoStatus.className = completed ? "todo-status done" : "todo-status";
+  todoActions.className = "todo-actions";
+  deleteButton.className = "todo-delete";
 
   todoTitle.textContent = title;
+  deleteButton.textContent = "Delete";
 
   todoStatus.addEventListener("click", () => {
     // console.log(completed);
@@ -18,7 +23,23 @@ const renderTodo = (todo) => {
     todoStatus.completed = !todoStatus.completed;
   });
 
-  todoEl.append(todoTitle, todoStatus);
+  deleteButton.addEventListener("click", () => {
+    const params = {
+      method: "DELETE",
+    };
+
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, params)
+      .then((resp) => resp.json())
+      .then((response) => {
+        console.log("succesfully deleted", todo);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
+
+  todoActions.append(todoStatus, deleteButton);
+  todoEl.append(todoTitle, todoActions);
   document.querySelector(".todo-container").prepend(todoEl);
 };
 
